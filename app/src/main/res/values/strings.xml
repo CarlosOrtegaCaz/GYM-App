@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">GYM</string>
+    <string name="descripcion_transferencia_electronica">Realiza tu pago de inscripción con una transferencia electrónica desde cualquier banco de la
+    República Méxicana. </string>
+    <string name="descripcion_paypal">Paga con tu tarjeta de crédito o débito a tráves del sistema de Paypay. Nosotros no cobramos comisiones por el uso de esta forma de pago.
+    Lo único que necesitas es una cuenta de Paypal. Si aun no la tienes regristrate en paypal.com</string>
+    <string name="descripcion_oxxo">Realiza tu pago en efectivo, fácil y rápido en tu tienda OXXO más cercana con un pequeño cargo de comisión de $8 pesos aproximadamente.</string>
+
+    <string name="descripcion_codigo_gym">Obten tu código pagando en tu gimnacio favorito</string>
 </resources>

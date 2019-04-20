@@ -11,6 +11,7 @@ import android.widget.TextView;
 public class Exito extends AppCompatActivity {
     ImageView Check;
     TextView Titulo, Toca;
+    Intent intentRegistro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,8 @@ public class Exito extends AppCompatActivity {
         Check = findViewById(R.id.imgCheck);
         Titulo = findViewById(R.id.txtRExitoso);
         Toca = findViewById(R.id.txtToca);
+        intentRegistro = getIntent();
+
 
         Check.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,8 +47,18 @@ public class Exito extends AppCompatActivity {
     }
 
     public void RedireccionMenu(){
-        Intent intentMenu = new Intent(Exito.this, MainActivity.class);
-        Exito.this.startActivity(intentMenu);
-        finish();
+        if(intentRegistro.getBooleanExtra("UserPays", false)) {
+            Intent goToPay = new Intent(this, Metodo.class);
+            goToPay.putExtra("NombrePlan", intentRegistro.getStringExtra("NombrePlan"));
+            goToPay.putExtra("TiempoPlan", intentRegistro.getStringExtra("TiempoPlan"));
+            goToPay.putExtra("CostoPlan", intentRegistro.getStringExtra("CostoPlan"));
+            goToPay.putExtra("DescPlan", intentRegistro.getStringExtra("DescPlan"));
+            this.startActivity(goToPay);
+            finish();
+        } else {
+            Intent intentMenu = new Intent(Exito.this, MainActivity.class);
+            Exito.this.startActivity(intentMenu);
+            finish();
+        }
     }
 }

@@ -11,7 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Exito"></activity>
+        <activity android:name=".FormularioPaypal"></activity>
+        <activity android:name=".FormularioOxxo" />
+        <activity android:name=".FormularioCodigoGym" />
+        <activity android:name=".FormularioPago" />
+        <activity android:name=".Exito" />
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

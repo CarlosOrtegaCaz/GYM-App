@@ -3,6 +3,7 @@ package com.example.gym;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -51,12 +52,90 @@ public class Inscripcion extends AppCompatActivity {
         Regresar = findViewById(R.id.btnRegresar);
         //Regresar = findViewById(R.id.btnRegistro);
 
-        settings = getPreferences(MODE_PRIVATE);
+        settings = PreferenceManager.getDefaultSharedPreferences(this);
         usuarios = getSharedPreferences("usuarios", 0);
         System.out.println(usuarios.getAll().toString());
         String BDUsuarios = usuarios.getString("BDUsuarios", "");
 
         intentIns = getIntent();
+
+        if(!settings.getString("UsuarioActivo","").equals("")){
+            String avatar = settings.getString("AvatarActivo", "");
+            if(!avatar.isEmpty()){
+                try {
+                    JSONObject AvatarObj = new JSONObject(avatar);
+                    if(AvatarObj.optString("PagoActivo").equals("true")){
+                        Intent intentMenuAutomatico = new Intent(Inscripcion.this, MainActivity.class);
+                        Inscripcion.this.startActivity(intentMenuAutomatico);
+                        finish();
+                    } else if (AvatarObj.optString("DemoActivo").equals("true")){
+                        Intent intentMenuAutomatico = new Intent(Inscripcion.this, MainActivity.class);
+                        Inscripcion.this.startActivity(intentMenuAutomatico);
+                        finish();
+                    } else if (AvatarObj.optString("DemoTerminado").equals("false")) {
+                        //Si no verificar si viene de pago redireccionarlo a metodo, si va a dia de prueba cambiar los settings de usuario y activar el demo day
+                        //PERO primero hay que verificar que no se halla acabado el dia demo
+
+                        if(intentIns.getBooleanExtra("DemoDay", false)){
+                            //Cambiar a estado activo de dia de prueba
+                            AvatarObj.put("DemoActivo", "true");
+                            settings.edit().putString("AvatarActivo", AvatarObj.toString()).apply();
+                            String BDUsuariosPosRegistro = usuarios.getString("BDUsuarios", "");
+
+                            if (BDUsuariosPosRegistro.isEmpty()) {
+                                Toast.makeText(this, "Error, falta implementar Bases de datos", Toast.LENGTH_SHORT).show();
+                            } else {
+                                try {
+                                    JSONArray jArrayUsuarios = new JSONArray(BDUsuariosPosRegistro);
+                                    //System.out.println("USUs: " + BDUsuarios + " L: " + jArrayUsuarios.length());
+                                    String user = settings.getString("UsuarioActivo", "");
+                                    for (int i = 0; i < jArrayUsuarios.length(); i++) {
+                                        //System.out.println("Usuario#" + i + " " + jArrayUsuarios.get(i));
+                                        JSONObject usuarioObj = new JSONObject(jArrayUsuarios.get(i).toString());
+                                        if (user.equals(usuarioObj.getString("Usuario"))) {
+                                            jArrayUsuarios.put(i,AvatarObj);
+                                            usuarios.edit().putString("BDUsuarios", jArrayUsuarios.toString()).apply();
+                                        }
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                            Intent cambioAprueba = new Intent(Inscripcion.this, MainActivity.class);
+                            Inscripcion.this.startActivity(cambioAprueba);
+                            finish();
+                        } else {
+                            Intent goToPay = new Intent(Inscripcion.this, Planes.class);
+                            goToPay.putExtra("NombrePlan", intentIns.getStringExtra("NombrePlan"));
+                            goToPay.putExtra("TiempoPlan", intentIns.getStringExtra("TiempoPlan"));
+                            goToPay.putExtra("CostoPlan", intentIns.getStringExtra("CostoPlan"));
+                            goToPay.putExtra("DescPlan", intentIns.getStringExtra("DescPlan"));
+                            Inscripcion.this.startActivity(goToPay);
+                        }
+
+                    } else {
+                        if(intentIns.getBooleanExtra("DemoDay", false)){
+                            //Cambiar a estado activo de dia de prueba
+                            Toast.makeText(this, "Tu día de prueba ha terminado", Toast.LENGTH_SHORT).show();
+                            Intent TerminoPrueba = new Intent(Inscripcion.this, Planes.class);
+                            Inscripcion.this.startActivity(TerminoPrueba);
+                            finish();
+                        } else {
+                            Intent goToPay = new Intent(Inscripcion.this, Planes.class);
+                            goToPay.putExtra("NombrePlan", intentIns.getStringExtra("NombrePlan"));
+                            goToPay.putExtra("TiempoPlan", intentIns.getStringExtra("TiempoPlan"));
+                            goToPay.putExtra("CostoPlan", intentIns.getStringExtra("CostoPlan"));
+                            goToPay.putExtra("DescPlan", intentIns.getStringExtra("DescPlan"));
+                            Inscripcion.this.startActivity(goToPay);
+                        }
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
 
 
         emptyUsersDb = false;
@@ -111,7 +190,8 @@ public class Inscripcion extends AppCompatActivity {
                         Inscripcion.this.startActivity(pantallaExito);
                         finish();
                     } else{
-                        Intent pantallaMetodo = new Intent(Inscripcion.this, Metodo.class);
+                        Intent pantallaMetodo = new Intent(Inscripcion.this, Exito.class);
+                        pantallaMetodo.putExtra("UserPays", true);
                         pantallaMetodo.putExtra("NombrePlan", "Nombre1");
                         pantallaMetodo.putExtra("TiempoPlan", "Tiempo1");
                         pantallaMetodo.putExtra("CostoPlan", "Costo1");
@@ -217,7 +297,14 @@ public class Inscripcion extends AppCompatActivity {
         map.put("Pass", Pass.getText().toString());
         map.put("Metodo", "");
         map.put("Tarjeta", "");
-        map.put("Activo", "true");
+        map.put("PagoActivo", "false");
+        map.put("DemoTerminado", "false");
+        if(intentIns.getBooleanExtra("DemoDay", false)){
+            map.put("DemoActivo", "true");
+        } else{
+            map.put("DemoActivo", "false");
+        }
+
 
         //map.put("ConfirmPass", ConfirmPass.getText().toString());
 
@@ -235,6 +322,7 @@ public class Inscripcion extends AppCompatActivity {
 
             settings.edit().putString("UsuarioActivo", jsonUsuario.getString("Usuario")).apply();
             settings.edit().putString("NombreActivo", jsonUsuario.getString("Nombre")).apply();
+            settings.edit().putString("GeneroActivo", jsonUsuario.getString("Genero")).apply();
             settings.edit().putString("AvatarActivo", jsonUsuario.toString()).apply();
         } catch (JSONException e) {
             e.printStackTrace();

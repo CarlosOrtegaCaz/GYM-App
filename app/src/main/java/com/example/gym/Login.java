@@ -2,6 +2,7 @@ package com.example.gym;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -37,12 +38,32 @@ public class Login extends AppCompatActivity {
 
         usuarios = getSharedPreferences("usuarios", 0);
 
-        settings = getPreferences(MODE_PRIVATE);
+        settings = PreferenceManager.getDefaultSharedPreferences(this);
         System.out.println("Settings: " + settings.getAll().toString());
         if(!settings.getString("UsuarioActivo","").equals("")){
-            Intent intentMenuAutomatico = new Intent(Login.this, MainActivity.class);
-            Login.this.startActivity(intentMenuAutomatico);
-            finish();
+            String avatar = settings.getString("AvatarActivo", "");
+            if(!avatar.isEmpty()){
+                try {
+                    JSONObject AvatarObj = new JSONObject(avatar);
+                    if(AvatarObj.optString("PagoActivo").equals("true")){
+                        Intent intentMenuAutomatico = new Intent(Login.this, MainActivity.class);
+                        Login.this.startActivity(intentMenuAutomatico);
+                        finish();
+                    } else if (AvatarObj.optString("DemoActivo").equals("true")){
+                        Intent intentMenuAutomatico = new Intent(Login.this, MainActivity.class);
+                        Login.this.startActivity(intentMenuAutomatico);
+                        finish();
+                    } else {
+                        Intent intentMenuAutomatico = new Intent(Login.this, Metodo.class);
+                        Login.this.startActivity(intentMenuAutomatico);
+                        finish();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
         }
 
 
