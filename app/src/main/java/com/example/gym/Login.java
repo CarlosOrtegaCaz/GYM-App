@@ -54,7 +54,7 @@ public class Login extends AppCompatActivity {
                         Login.this.startActivity(intentMenuAutomatico);
                         finish();
                     } else {
-                        Intent intentMenuAutomatico = new Intent(Login.this, Metodo.class);
+                        Intent intentMenuAutomatico = new Intent(Login.this, Planes.class);
                         Login.this.startActivity(intentMenuAutomatico);
                         finish();
                     }

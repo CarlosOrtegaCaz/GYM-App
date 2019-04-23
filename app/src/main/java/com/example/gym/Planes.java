@@ -32,7 +32,7 @@ public class Planes extends AppCompatActivity {
                 intentMetodo.putExtra("DemoDay", false);
                 intentMetodo.putExtra("NombrePlan", "Nombre1");
                 intentMetodo.putExtra("TiempoPlan", "Tiempo1");
-                intentMetodo.putExtra("CostoPlan", "Costo1");
+                intentMetodo.putExtra("CostoPlan", "500");
                 intentMetodo.putExtra("DescPlan", "Desc1");
                 Planes.this.startActivity(intentMetodo);
             }

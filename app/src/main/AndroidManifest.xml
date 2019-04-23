@@ -11,23 +11,47 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".FormularioPaypal"></activity>
-        <activity android:name=".FormularioOxxo" />
-        <activity android:name=".FormularioCodigoGym" />
-        <activity android:name=".FormularioPago" />
-        <activity android:name=".Exito" />
-        <activity android:name=".Splash">
+        <activity
+            android:name=".FormularioPaypal"
+            android:label="Pago con PayPal" />
+        <activity
+            android:name=".FormularioOxxo"
+            android:label="Pago en OXXO" />
+        <activity
+            android:name=".FormularioCodigoGym"
+            android:label="Código GYM" />
+        <activity
+            android:name=".FormularioPago"
+            android:label="Pago con tarjeta de crédito o débito" />
+        <activity
+            android:name=".Exito"
+            android:label="Registro correcto" />
+        <activity
+            android:name=".Splash"
+            android:theme="@style/AppTheme">
+
+        </activity>
+        <activity
+            android:name=".Inscripcion"
+            android:label="Registro para la inscripción" />
+        <activity
+            android:name=".Metodo"
+            android:label="Métodos de pago" />
+        <activity
+            android:name=".Planes"
+            android:label="Planes" />
+        <activity
+            android:name=".Login"
+            android:label="Inicio de sesión">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Inscripcion" />
-        <activity android:name=".Metodo" />
-        <activity android:name=".Planes" />
-        <activity android:name=".Login" />
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

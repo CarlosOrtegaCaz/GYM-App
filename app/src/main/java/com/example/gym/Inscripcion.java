@@ -58,6 +58,14 @@ public class Inscripcion extends AppCompatActivity {
         String BDUsuarios = usuarios.getString("BDUsuarios", "");
 
         intentIns = getIntent();
+        if(!settings.getString("UsuarioActivo","").equals("") && !intentIns.getBooleanExtra("DemoDay", true)){
+            //Intent activeToMetodo = new Intent(this, Metodo.class);
+            intentIns.setClass(this, Metodo.class);
+            System.out.println("Pasa por aqui");
+            this.startActivity(intentIns);
+            finish();
+            return;
+        }
 
         if(!settings.getString("UsuarioActivo","").equals("")){
             String avatar = settings.getString("AvatarActivo", "");
@@ -192,10 +200,10 @@ public class Inscripcion extends AppCompatActivity {
                     } else{
                         Intent pantallaMetodo = new Intent(Inscripcion.this, Exito.class);
                         pantallaMetodo.putExtra("UserPays", true);
-                        pantallaMetodo.putExtra("NombrePlan", "Nombre1");
-                        pantallaMetodo.putExtra("TiempoPlan", "Tiempo1");
-                        pantallaMetodo.putExtra("CostoPlan", "Costo1");
-                        pantallaMetodo.putExtra("DescPlan", "Desc1");
+                        pantallaMetodo.putExtra("NombrePlan", intentIns.getStringExtra("NombrePlan"));
+                        pantallaMetodo.putExtra("TiempoPlan", intentIns.getStringExtra("TiempoPlan"));
+                        pantallaMetodo.putExtra("CostoPlan", intentIns.getStringExtra("CostoPlan"));
+                        pantallaMetodo.putExtra("DescPlan", intentIns.getStringExtra("DescPlan"));
                         Inscripcion.this.startActivity(pantallaMetodo);
                         finish();
                     }
@@ -279,6 +287,7 @@ public class Inscripcion extends AppCompatActivity {
         return true;
     }
 
+    //Contrato de usuario para SQLite
     public boolean registrarUsuario(){
         Map<String, String> map = new HashMap<String, String>();
         map.put("Nombre", Nombre.getText().toString());

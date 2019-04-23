@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -21,6 +22,7 @@ public class Metodo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_metodo);
 
         Codigogym = findViewById(R.id.cardCodigoGYM);
@@ -40,7 +42,7 @@ public class Metodo extends AppCompatActivity {
         Codigogym.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent codgym = new Intent(Metodo.this, FormularioPago.class);
+                Intent codgym = new Intent(Metodo.this, FormularioCodigoGym.class);
                 codgym.putExtra("Tipo", "CodGym");
                 Metodo.this.startActivity(codgym);
             }
@@ -76,7 +78,7 @@ public class Metodo extends AppCompatActivity {
         Paypal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent paypal = new Intent(Metodo.this, FormularioPago.class);
+                Intent paypal = new Intent(Metodo.this, FormularioPaypal.class);
                 paypal.putExtra("Tipo", "PayPal");
                 paypal.putExtra("NombrePlan", nombrePlan);
                 paypal.putExtra("TiempoPlan", tiempoPlan);
@@ -89,7 +91,7 @@ public class Metodo extends AppCompatActivity {
         Oxxo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent oxxo = new Intent(Metodo.this, FormularioPago.class);
+                Intent oxxo = new Intent(Metodo.this, FormularioOxxo.class);
                 oxxo.putExtra("Tipo", "OXXO");
                 oxxo.putExtra("NombrePlan", nombrePlan);
                 oxxo.putExtra("TiempoPlan", tiempoPlan);

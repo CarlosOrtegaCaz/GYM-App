@@ -6,5 +6,12 @@
     Lo único que necesitas es una cuenta de Paypal. Si aun no la tienes regristrate en paypal.com</string>
     <string name="descripcion_oxxo">Realiza tu pago en efectivo, fácil y rápido en tu tienda OXXO más cercana con un pequeño cargo de comisión de $8 pesos aproximadamente.</string>
 
-    <string name="descripcion_codigo_gym">Obten tu código pagando en tu gimnacio favorito</string>
+    <string name="descripcion_codigo_gym">Obten tu código pagando en tu gimnasio favorito</string>
+    <string name="instrucciones_pago_codigogym">Para activar tu plan debes ingresar tu código que te proporcionara tu instructor</string>
+    <string name="instruccion_pago_paypal">Ingresa tu cuenta de Paypal para relizar el pago de tu plan</string>
+    <string name="title_module_dieta">Dieta</string>
+    <string name="title_module_rutinas_gym" >Rutinas GYM</string>
+    <string name="title_module_rutinas_casa">Rutinas en casa</string>
+    <string name="instrucciones_pago_oxxo">Para activar tu plan debes pagar en tu oxxo preferido un deposito al número xxxx-xxxx-xxxx-xxxx,
+    el costo de tu plan. Una vez pagado ingresa aqui el número de referencia que estara en tu ticket de pago</string>
 </resources>
