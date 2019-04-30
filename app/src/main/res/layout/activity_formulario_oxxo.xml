@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorTerceary"
     tools:context=".FormularioOxxo">
 
     <ImageView
@@ -34,7 +35,8 @@
         android:layout_marginTop="10dp"
         android:ems="13"
         android:hint="Ingresa aqui tu número de refenecia"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/btnPagoOxxo"
@@ -43,5 +45,6 @@
         android:layout_below="@id/txtCodigoOxxo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
+        android:background="@drawable/buton_primary"
         android:text="Continuar" />
 </android.widget.RelativeLayout>

@@ -1,7 +1,6 @@
-package com.example.gym;
+package com.example.gymmf;
 
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -9,8 +8,6 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
-
-import java.text.Normalizer;
 
 public class Metodo extends AppCompatActivity {
     CardView Codigogym, DepBan, Paypal, Oxxo;

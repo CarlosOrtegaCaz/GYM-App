@@ -1,4 +1,4 @@
-package com.example.gym;
+package com.example.gymmf;
 
 import android.content.Intent;
 import android.content.SharedPreferences;

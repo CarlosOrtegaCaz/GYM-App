@@ -17,7 +17,8 @@
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="@color/textColorSecundary">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -29,12 +30,13 @@
                         android:id="@+id/textView4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_marginTop="30dp"
                         android:layout_marginRight="10dp"
                         android:capitalize="characters"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="Ahora selecciona un método de pago"
+                        android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold|italic" />
                 </LinearLayout>
@@ -111,6 +113,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
                         android:text="Depósito bancario"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -121,7 +124,8 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="5dp"
-                        android:text="@string/descripcion_transferencia_electronica" />
+                        android:text="@string/descripcion_transferencia_electronica"
+                        android:textColor="@color/black" />
 
                     <ImageView
                         android:id="@+id/imgVisaMaster"
@@ -151,6 +155,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
                         android:text="Paypal"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -161,7 +166,8 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="5dp"
-                        android:text="@string/descripcion_paypal" />
+                        android:text="@string/descripcion_paypal"
+                        android:textColor="@color/black" />
 
                     <ImageView
                         android:id="@+id/imageView4"
@@ -193,6 +199,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
                         android:text="OXXO"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -202,7 +209,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
-                        android:text="@string/descripcion_oxxo" />
+                        android:text="@string/descripcion_oxxo"
+                        android:textColor="@color/black" />
 
                     <ImageView
                         android:id="@+id/imageView5"

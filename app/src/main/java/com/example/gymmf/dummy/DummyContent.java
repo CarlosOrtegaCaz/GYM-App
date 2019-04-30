@@ -1,4 +1,4 @@
-package com.example.gym.dummy;
+package com.example.gymmf.dummy;
 
 import java.util.ArrayList;
 import java.util.HashMap;

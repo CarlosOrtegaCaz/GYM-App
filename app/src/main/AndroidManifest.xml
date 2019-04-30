@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.gym">
+    package="com.example.gymmf">
 
     <application
         android:allowBackup="true"
@@ -12,37 +12,37 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".FormularioPaypal"
+            android:name="com.example.gymmf.FormularioPaypal"
             android:label="Pago con PayPal" />
         <activity
-            android:name=".FormularioOxxo"
+            android:name="com.example.gymmf.FormularioOxxo"
             android:label="Pago en OXXO" />
         <activity
-            android:name=".FormularioCodigoGym"
+            android:name="com.example.gymmf.FormularioCodigoGym"
             android:label="Código GYM" />
         <activity
-            android:name=".FormularioPago"
+            android:name="com.example.gymmf.FormularioPago"
             android:label="Pago con tarjeta de crédito o débito" />
         <activity
-            android:name=".Exito"
+            android:name="com.example.gymmf.Exito"
             android:label="Registro correcto" />
         <activity
-            android:name=".Splash"
+            android:name="com.example.gymmf.Splash"
             android:theme="@style/AppTheme">
 
         </activity>
         <activity
-            android:name=".Inscripcion"
+            android:name="com.example.gymmf.Inscripcion"
             android:label="Registro para la inscripción" />
         <activity
-            android:name=".Metodo"
+            android:name="com.example.gymmf.Metodo"
             android:label="Métodos de pago" />
         <activity
-            android:name=".Planes"
+            android:name="com.example.gymmf.Planes"
             android:label="Planes" />
         <activity
-            android:name=".Login"
-            android:label="Inicio de sesión">
+            android:name="com.example.gymmf.Login"
+            android:label="GYM2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -50,7 +50,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.gymmf.MainActivity"
             android:theme="@style/AppTheme"></activity>
     </application>
 

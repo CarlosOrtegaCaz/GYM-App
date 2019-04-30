@@ -1,4 +1,4 @@
-package com.example.gym;
+package com.example.gymmf;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,57 +8,47 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class FormularioPago extends AppCompatActivity {
-    Button Pagar;
-    TextView Total;
-    EditText NumeroTarjeta, MM, YY, CVV;
-    Intent DatosPlan;
+public class FormularioOxxo extends AppCompatActivity {
+    Button Continuar;
+    EditText CodigoOxxo;
     SharedPreferences settings, usuarios;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_formulario_pago);
+        setContentView(R.layout.activity_formulario_oxxo);
 
-        Pagar = findViewById(R.id.btnPagarDeposito);
-        Total = findViewById(R.id.txtTotal);
-        NumeroTarjeta = findViewById(R.id.numNumeroTarjeta);
-        MM = findViewById(R.id.numTarjetaMes);
-        YY = findViewById(R.id.numTarjetaAno);
-        CVV = findViewById(R.id.numCVV);
+        Continuar = findViewById(R.id.btnPagoOxxo);
+        CodigoOxxo = findViewById(R.id.txtCodigoOxxo);
 
-        DatosPlan = getIntent();
+
         settings = PreferenceManager.getDefaultSharedPreferences(this);
         usuarios = getSharedPreferences("usuarios", 0);
 
-        Total.setText("$" + DatosPlan.getStringExtra("CostoPlan"));
-
-
-
-        Pagar.setOnClickListener(new View.OnClickListener() {
+        Continuar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (validarTodo()) {
-                    //actualizar usuario
+                if(!CodigoOxxo.getText().toString().equals("")){
                     if(actualizarEstadoPago()){
-                        Intent menuPayed = new Intent(FormularioPago.this, MainActivity.class);
-                        FormularioPago.this.startActivity(menuPayed);
+                        Intent munupayed = new Intent(FormularioOxxo.this,  MainActivity.class);
+                        FormularioOxxo.this.startActivity(munupayed);
                         finish();
                     } else {
-                        //Deberia mandar error, pero por estilo software tipo Demo lo redireccionaremos
-                        Intent menuPayed = new Intent(FormularioPago.this, MainActivity.class);
-                        FormularioPago.this.startActivity(menuPayed);
+                        //Aqui deberia mostrar error. Por motivc DEMO continuaremos
+                        Intent munupayed = new Intent(FormularioOxxo.this,  MainActivity.class);
+                        FormularioOxxo.this.startActivity(munupayed);
                         finish();
                     }
 
-
+                } else {
+                    CodigoOxxo.requestFocus();
+                    CodigoOxxo.setError("Requerido");
                 }
             }
         });
@@ -107,30 +97,5 @@ public class FormularioPago extends AppCompatActivity {
             }
         }
         return false;
-    }
-
-    public boolean validarTodo() {
-        if (NumeroTarjeta.getText().toString().equals("")) {
-            NumeroTarjeta.requestFocus();
-            NumeroTarjeta.setError("Obligatorio");
-            return false;
-        }
-        if (MM.getText().toString().equals("")) {
-            MM.requestFocus();
-            MM.setError("Obligatorio");
-            return false;
-        }
-        if (YY.getText().toString().equals("")) {
-            YY.requestFocus();
-            YY.setError("Obligatorio");
-            return false;
-        }
-        if (CVV.getText().toString().equals("")) {
-            CVV.requestFocus();
-            CVV.setError("Obligatorio");
-            return false;
-        }
-
-        return true;
     }
 }

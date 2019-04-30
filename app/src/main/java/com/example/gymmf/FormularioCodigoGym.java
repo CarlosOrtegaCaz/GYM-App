@@ -1,4 +1,4 @@
-package com.example.gym;
+package com.example.gymmf;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,18 +14,18 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class FormularioOxxo extends AppCompatActivity {
+public class FormularioCodigoGym extends AppCompatActivity {
     Button Continuar;
-    EditText CodigoOxxo;
+    EditText Codigo;
     SharedPreferences settings, usuarios;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_formulario_oxxo);
+        setContentView(R.layout.activity_formulario_codigo_gym);
 
-        Continuar = findViewById(R.id.btnPagoOxxo);
-        CodigoOxxo = findViewById(R.id.txtCodigoOxxo);
+        Continuar = findViewById(R.id.btnPagoCodigo);
+        Codigo = findViewById(R.id.txtCodigogym);
 
 
         settings = PreferenceManager.getDefaultSharedPreferences(this);
@@ -34,21 +34,21 @@ public class FormularioOxxo extends AppCompatActivity {
         Continuar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!CodigoOxxo.getText().toString().equals("")){
+                if(!Codigo.getText().toString().equals("")){
                     if(actualizarEstadoPago()){
-                        Intent munupayed = new Intent(FormularioOxxo.this,  MainActivity.class);
-                        FormularioOxxo.this.startActivity(munupayed);
+                        Intent munupayed = new Intent(FormularioCodigoGym.this,  MainActivity.class);
+                        FormularioCodigoGym.this.startActivity(munupayed);
                         finish();
                     } else {
                         //Aqui deberia mostrar error. Por motivc DEMO continuaremos
-                        Intent munupayed = new Intent(FormularioOxxo.this,  MainActivity.class);
-                        FormularioOxxo.this.startActivity(munupayed);
+                        Intent munupayed = new Intent(FormularioCodigoGym.this,  MainActivity.class);
+                        FormularioCodigoGym.this.startActivity(munupayed);
                         finish();
                     }
 
                 } else {
-                    CodigoOxxo.requestFocus();
-                    CodigoOxxo.setError("Requerido");
+                    Codigo.requestFocus();
+                    Codigo.setError("Requerido");
                 }
             }
         });
@@ -98,4 +98,5 @@ public class FormularioOxxo extends AppCompatActivity {
         }
         return false;
     }
+
 }

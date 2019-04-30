@@ -1,6 +1,5 @@
-package com.example.gym;
+package com.example.gymmf;
 
-import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;

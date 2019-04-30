@@ -1,4 +1,4 @@
-package com.example.gym;
+package com.example.gymmf;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,10 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.gym.dummy.DummyContent;
-import com.example.gym.dummy.DummyContent.DummyItem;
-
-import java.util.List;
+import com.example.gymmf.dummy.DummyContent;
+import com.example.gymmf.dummy.DummyContent.DummyItem;
 
 /**
  * A fragment representing a list of Items.
