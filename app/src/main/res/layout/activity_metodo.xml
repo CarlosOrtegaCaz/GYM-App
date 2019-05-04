@@ -223,12 +223,8 @@
 
             <Button
                 android:id="@+id/btnMetodoPlanes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:background="@color/black"
                 android:text="Regresar a Planes"
-                android:textColor="@color/white" />
+                style="@style/boton_regresar" />
         </LinearLayout>
     </ScrollView>
 
