@@ -15,4 +15,40 @@
     <string name="instrucciones_pago_oxxo">Para activar tu plan debes pagar en tu oxxo preferido un deposito al número xxxx-xxxx-xxxx-xxxx,
     el costo de tu plan. Una vez pagado ingresa aqui el número de referencia que estara en tu ticket de pago</string>
     <string name="title_img_codigogym">¡Activate \n y \n ejercitate ya!</string>
+    <string name="ingredientes_lista">· 500 g de pechuga de pavo
+        \n· 2 ramilletes de brócoli
+        \n· 1⁄4 de cebolla
+        \n· 3 tazas de agua
+        \n· 1⁄2 cucharadita de sal
+        \n· 4 cucharadas de crema</string>
+    <string name="receta_preparacion_lista">
+        \n 1. Calienta el agua y cuece la pechuga con la cebolla y un poco de sal. Enfría y desmenuza el pavo finamente.
+        \n 2. Mientras, cuece el brócoli con media taza de agua. Agrega el pavo desmenuzado y la crema; añade una pizca más de sal.
+        \n 3. Calienta dos minutos a fuego suave y sirve.</string>
+    <string name="nombre_ejercicio">Press inclinado con mancuernas</string>
+    <string name="instrucciones_ejercicio">Sentado en un banco mas o menoss inclinado (45°  60°), los brazos extendidos en vertical, manos frente a frente tomando las mancuernas:</string>
+    <string name="rutinas_casa_reto1_ttitulo">Perder peso y\n mantenerte saludable</string>
+    <string name="instrucciones_saltos_jacks">1. Ponte de pie en posición recta con las piernas ligeramente separadas, Isa las rollidas un poco \n\n
+    2. Con un pequeño salto, extiende las piernas al mismo tiemo que llevas las manos por encima de la cabeza, hasta que casi se toquen. Durante el
+    movimiento, los brazos deben estar ligeramente flexionados. \n \n
+    3. Presta atención para realizar el movimiento mientras descansas sobre los dedos de los pies, para retirar el paso del cuerpo de las pantorrillas. \n \n
+    4. Vuelve rápidamente a la posición inicial y repite el movimiento el número de veces preestablecidas. No flexionas el cuerpo hacia delante tras el primer salto</string>
+
+    <string name="instrucciones_sentadillas">1. Sostén las manos estiradas y frente al pecho. Los  pues deben estar separados a la altura de la cadera. \n\n
+        2. Empuja la cadera hacia atrás y baje su cuerpo en posición de sentadilla hasta que los muslos superiores estén, al menos, paralelos al piso. \n\n
+        3. Mantén la estalda erguida, el mentón hacia adelante. \n\n
+        4. Haz una pausa y luego retrae hasta volver a la posición inicial.
+    </string>
+
+    <string name="instrucciones_plancha_piernas">1. Comienza con una plancha normal. \n\n
+    2. Eleve su pierna sin flexionarla a 45 grados y mantengala \n\n
+    3. Alterna las piernas y repite</string>
+    <string name="instrucciones_posicion_cobra">Tumbado boca abajo, con las palmas debajo de los hombros y loss dedos apuntano hacia adelante. \n\n
+    2. Moviliza la epalda, presiona contra el suelo las palmas de las manos y continúa curvando la columna para levantarla, sin levantar pies y piernas. \n\n
+    3. Eleva el pecho desde los brazos, presionando desde loss talones de las manos. \n\n
+    4. Con los hombros relajados y la espalda todavía en movimiento, estira los brazos. Estira la parte posterior del cuello, metiendo la barbilla
+    hacia la garganta</string>
+
+
+
 </resources>

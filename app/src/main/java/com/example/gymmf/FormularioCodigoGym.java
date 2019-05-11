@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -17,6 +18,8 @@ import org.json.JSONObject;
 public class FormularioCodigoGym extends AppCompatActivity {
     Button Continuar;
     EditText Codigo;
+    TextView Total;
+    Intent DatosPlan;
     SharedPreferences settings, usuarios;
 
     @Override
@@ -26,6 +29,11 @@ public class FormularioCodigoGym extends AppCompatActivity {
 
         Continuar = findViewById(R.id.btnPagoCodigo);
         Codigo = findViewById(R.id.txtCodigogym);
+
+        DatosPlan = getIntent();
+        Total = findViewById(R.id.txtTotal);
+        Total.setText("$" + DatosPlan.getStringExtra("CostoPlan"));
+
 
 
         settings = PreferenceManager.getDefaultSharedPreferences(this);

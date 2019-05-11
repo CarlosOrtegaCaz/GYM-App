@@ -41,6 +41,10 @@ public class Metodo extends AppCompatActivity {
             public void onClick(View v) {
                 Intent codgym = new Intent(Metodo.this, FormularioCodigoGym.class);
                 codgym.putExtra("Tipo", "CodGym");
+                codgym.putExtra("NombrePlan", nombrePlan);
+                codgym.putExtra("TiempoPlan", tiempoPlan);
+                codgym.putExtra("CostoPlan", costoPlan);
+                codgym.putExtra("DescPlan", descPlan);
                 Metodo.this.startActivity(codgym);
             }
         });

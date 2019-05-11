@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class Dietas extends AppCompatActivity {
     ListView ListaDietas;
-    String [] diasSemana = new String[] {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado", "Domingo"};
+    String [] diasSemana = new String[] {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"};
     ArrayAdapter<String> adapter;
 
     @Override

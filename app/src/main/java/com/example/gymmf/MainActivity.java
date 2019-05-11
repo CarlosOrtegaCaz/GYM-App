@@ -71,5 +71,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        GYM = findViewById(R.id.btnMainRutinasGym);
+        GYM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent rutinasgym = new Intent(MainActivity.this, RutinasGym.class);
+                MainActivity.this.startActivity(rutinasgym);
+            }
+        });
+
+        Casa = findViewById(R.id.btnMainRutinasCasa);
+        Casa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent rutinasCasa = new Intent(MainActivity.this, RutinasCasa.class);
+                MainActivity.this.startActivity(rutinasCasa);
+            }
+        });
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        System.exit(0);
     }
 }

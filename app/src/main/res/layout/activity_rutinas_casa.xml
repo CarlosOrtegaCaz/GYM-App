@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".RutinasCasa">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardRutinasCasa0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imgCasaRetoHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        app:srcCompat="@drawable/header_casa_1" />
+
+                    <TextView
+                        android:id="@+id/txtTitleCard"
+                        style="@style/card_text_white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="0dp"
+                        android:text="Rutinas en Casa" />
+
+                    <TextView
+                        android:id="@+id/txtDescCard"
+                        style="@style/card_text_white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtTitleCard"
+                        android:layout_gravity="top"
+                        android:layout_marginTop="0dp"
+                        android:text="Selecciona un reto a tu gusto"
+                        android:textSize="18sp"
+                        android:textStyle="normal" />
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardRutinasCasa1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="30dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/rutinas_casa_reto1_2" />
+
+                    <TextView
+                        android:id="@+id/textView47"
+                        style="@style/card_text_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="20dp"
+                        android:gravity="right"
+                        android:text="@string/rutinas_casa_reto1_ttitulo"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textView45"
+                        style="@style/card_text_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView47"
+                        android:layout_alignParentRight="true"
+                        android:text="Nivel 1"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardRutinasCasa2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="30dp"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView030"
+                        android:layout_width="wrap_content"
+                        android:layout_height="180dp"
+                        android:adjustViewBounds="true"
+                        app:srcCompat="@drawable/rutina_casa_reto2_1" />
+
+                    <TextView
+                        android:id="@+id/textView050"
+                        style="@style/card_text_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="20dp"
+                        android:text="Gluteo y abdomen"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textView051"
+                        style="@style/card_text_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView050"
+                        android:layout_alignParentRight="true"
+                        android:text="Nivel 2"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardRutinasCasa3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="30dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView040"
+                        android:layout_width="wrap_content"
+                        android:layout_height="180dp"
+                        android:adjustViewBounds="true"
+                        app:srcCompat="@drawable/rutinas_casa_reto3" />
+
+                    <TextView
+                        android:id="@+id/textView061"
+                        style="@style/card_text_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="false"
+                        android:layout_alignParentBottom="false"
+                        android:layout_marginTop="100dp"
+                        android:layout_marginEnd="27dp"
+                        android:text="Nivel 3"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textView060"
+                        style="@style/card_text_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView061"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="false"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Fortalezer músculos"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+            <Button
+                android:id="@+id/button6"
+                style="@style/boton_regresar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Menú principal" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.widget.RelativeLayout>
