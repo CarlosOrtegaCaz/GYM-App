@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="0dp"
+                android:layout_marginBottom="10dp"
                 android:text="Rutinas en Casa"
                 tools:text="Nombre ejercicio" />
 

@@ -170,7 +170,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:text="www.cocinafacil.com.mx"
-                android:textColor="@android:color/darker_gray" />
+                android:textColor="@android:color/darker_gray"
+                android:visibility="invisible" />
 
             <Button
                 android:id="@+id/button2"

@@ -48,6 +48,11 @@ public class RutinasCasaRetoDetalle extends AppCompatActivity {
                 Titulo.setText("Postura de la cobra");
                 Instrucciones.setText(R.string.instrucciones_posicion_cobra);
                 break;
+            case 5:
+                Header.setImageResource(R.drawable.rutinas_casa_lagartija_hombre);
+                Titulo.setText("Flexiones de brazo");
+                Instrucciones.setText(R.string.instrucciones_flexiones_brazo);
+                break;
 
         }
 

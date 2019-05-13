@@ -24,11 +24,18 @@
                 android:scaleType="fitStart"
                 app:srcCompat="@drawable/dieta1" />
 
-            <ListView
-                android:id="@+id/listaDietas"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@id/imgDieta" />
+                android:layout_below="@id/imgDieta"
+                android:minHeight="300dp">
+
+                <ListView
+                    android:id="@+id/listaDietas"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+
         </RelativeLayout>
     </ScrollView>
 

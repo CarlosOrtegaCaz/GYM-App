@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class RutinasCasaReto extends AppCompatActivity {
 //
     ImageView Header;
-    CardView Card1, Card2,Card3,Card4;
+    CardView Card1, Card2,Card3,Card4, Card5;
     Intent intentIns;
     TextView Titulo;
     Button Regresar;
@@ -51,6 +51,7 @@ public class RutinasCasaReto extends AppCompatActivity {
         Card2 = findViewById(R.id.cardRutinasCasa2);
         Card3 = findViewById(R.id.cardRutinasCasa3);
         Card4 = findViewById(R.id.cardRutinasCasa4);
+        Card5 = findViewById(R.id.cardRutinasCasa5);
 
         Card1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +84,16 @@ public class RutinasCasaReto extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(RutinasCasaReto.this, RutinasCasaRetoDetalle.class);
-                intent.putExtra("Detalle", 4);
+                intent.putExtra("Detalle", 5); //intercambiado con card5
+                RutinasCasaReto.this.startActivity(intent);
+            }
+        });
+
+        Card5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RutinasCasaReto.this, RutinasCasaRetoDetalle.class);
+                intent.putExtra("Detalle", 4); //intercambiado con card4
                 RutinasCasaReto.this.startActivity(intent);
             }
         });

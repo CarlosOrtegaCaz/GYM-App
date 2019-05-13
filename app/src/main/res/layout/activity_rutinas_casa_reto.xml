@@ -157,6 +157,7 @@
                         android:id="@+id/imageView040"
                         android:layout_width="wrap_content"
                         android:layout_height="85dp"
+                        android:layout_centerVertical="true"
                         android:adjustViewBounds="true"
                         app:srcCompat="@drawable/plancha_pierna_1" />
 
@@ -167,7 +168,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="20dp"
-                        android:text="Levantamientos de pierna"
+                        android:text="Elevaciones de pierna"
                         android:textSize="18sp" />
 
                     <TextView
@@ -177,6 +178,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/textView060"
                         android:layout_alignParentRight="true"
+                        android:layout_marginBottom="30dp"
                         android:text="30s"
                         android:textSize="18sp" />
                 </RelativeLayout>
@@ -195,13 +197,54 @@
 
                     <ImageView
                         android:id="@+id/imageView050"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:adjustViewBounds="true"
+                        app:srcCompat="@drawable/rutinas_casa_lagartija_hombre_2" />
+
+                    <TextView
+                        android:id="@+id/textView070"
+                        style="@style/card_text_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="20dp"
+                        android:text="Flexiones de brazo"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textView071"
+                        style="@style/card_text_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView070"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="30dp"
+                        android:text="20s"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardRutinasCasa5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="30dp"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView060"
                         android:layout_width="wrap_content"
                         android:layout_height="100dp"
                         android:adjustViewBounds="true"
                         app:srcCompat="@drawable/postura_cobra_1" />
 
                     <TextView
-                        android:id="@+id/textView070"
+                        android:id="@+id/textView080"
                         style="@style/card_text_black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -211,11 +254,11 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/textView071"
+                        android:id="@+id/textView081"
                         style="@style/card_text_black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/textView070"
+                        android:layout_below="@id/textView080"
                         android:layout_alignParentRight="true"
                         android:text="30s"
                         android:textSize="18sp" />
